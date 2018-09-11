@@ -10,7 +10,7 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- *
+ * 
  * @author 11151100178, Beatriz
  */
 public class CarrinhoDeCompra {
