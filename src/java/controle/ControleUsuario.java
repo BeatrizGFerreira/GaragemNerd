@@ -44,7 +44,7 @@ public class ControleUsuario extends HttpServlet {
                 usuario.setSenha(request.getParameter("txtSenha"));*/
                 String perfil = request.getParameter("optPerfil");
                 
-                //ENDERECO ****TESTE****
+                //ENDERECO ****TESTE*****
                 String logradouro = request.getParameter("txtLogradouro");
                 String cep = request.getParameter("txtCep");
                 int numero = Integer.parseInt(request.getParameter("txtNumero"));
