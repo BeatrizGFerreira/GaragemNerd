@@ -44,13 +44,13 @@ public class ControleUsuario extends HttpServlet {
                 usuario.setSenha(request.getParameter("txtSenha"));*/
                 String perfil = request.getParameter("optPerfil");
                 
-                //ENDERECO ****TESTE*****
+                /*ENDERECO ****TESTE*****
                 String logradouro = request.getParameter("txtLogradouro");
                 String cep = request.getParameter("txtCep");
                 int numero = Integer.parseInt(request.getParameter("txtNumero"));
                 String bairro = request.getParameter("txtBairro");
                 String cidade = request.getParameter("txtCidade");
-                String estado = request.getParameter("txtEstado");
+                String estado = request.getParameter("txtEstado");*/
             
                 usuario.setNome(nome);
                 usuario.setRg(rg);
@@ -63,21 +63,24 @@ public class ControleUsuario extends HttpServlet {
                 usuario.setPerfil(PerfilDeAcesso.COMUM);
                 usuario.setStatus(true);
                 
-                //ENDERECO ****TESTE****
+                /*ENDERECO ****TESTE****
                 Endereco endereco = new Endereco();
                 endereco.setLogradouro(logradouro);
                 endereco.setCep(cep);
                 endereco.setNumero(numero);
                 endereco.setBairro(bairro);
                 endereco.setCidade(cidade);
-                endereco.setEstado(estado);                
+                endereco.setEstado(estado); */               
                 
                 UsuarioDAO dao = new UsuarioDAO();
                 dao.cadastraNovoUsuario(usuario);
                 
                 request.setAttribute("lista", dao.listar());
+                //request.setAttribute("usuario", dao.listar());
                 
-                RequestDispatcher rd = request.getRequestDispatcher("/admin/Lista.jsp");
+               // RequestDispatcher rd = request.getRequestDispatcher("/admin/Lista.jsp");
+               // ERROR *********************
+                RequestDispatcher rd = request.getRequestDispatcher("../CadEnd.jsp");
                 //quem vai acionar toda essa ação é o forward
                 rd.forward(request, response);
                 

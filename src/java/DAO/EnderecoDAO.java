@@ -41,6 +41,7 @@ public void cadastrarEndereco(Endereco endereco) {
     pstmt.setString(4, endereco.getBairro());
     pstmt.setString(5, endereco.getCidade());
     pstmt.setString(6, endereco.getEstado());
+    
     pstmt.execute();
     
     conexao.commit();

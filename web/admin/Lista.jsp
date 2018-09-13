@@ -32,13 +32,7 @@
                 <td>Telefone:</td>
                 <td>Email:</td>
                 <td>Login:</td>
-                <td>Senha:</td>   
-                <td>Logradouro:</td>
-                <td>CEP:</td>
-                <td>Número:</td>
-                <td>Bairro:</td>
-                <td>Cidade:</td>
-                <td>Estado:</td>
+                <td>Senha:</td>                   
                 
                 <td>    </td>
                 
@@ -59,16 +53,7 @@
                 <td> <%= usuario.getEmail() %>  </td>
                 <td> <%= usuario.getLogin()%>  </td>
                 <td> <%= usuario.getSenha()%>  </td>
-                
-                <td> <%= usuario.getEndereco().getLogradouro()%>  </td>
-                <td> <%= usuario.getEndereco().getCep()%>  </td>
-                <td> <%= usuario.getEndereco().getNumero()%>  </td>
-                <td> <%= usuario.getEndereco().getBairro()%>  </td>
-                <td> <%= usuario.getEndereco().getCidade()%>  </td>
-                <td> <%= usuario.getEndereco().getEstado()%>  </td>
-     
-   
-                        
+          
                 <%-- <td><a href="ControlePessoa?id=<%=usuario.getId() %>&acao=Excluir"> Excluir</a></td> --%>
                 <td><a href="ControleUsuario?id=<%=usuario.getId()%>&acao=Consultar"> Editar</a></td>
                 <td></td>

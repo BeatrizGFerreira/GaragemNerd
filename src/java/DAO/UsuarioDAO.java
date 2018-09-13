@@ -23,10 +23,12 @@ import util.Conexao;
  * @author Alexandre
  */
 public class UsuarioDAO {
-        
+      
+      
       private static final String CADASTRA_NOVO_USUARIO = "INSERT INTO usuario (nome, rg, cpf, dtnasc, tel, email, login, senha,perfil, status) VALUES (?,?,?,?,?,?,?,?,?,?)";
       private static final String AUTENTICA_USUARIO = "SELECT * FROM usuario WHERE login=?AND senha=?";
       private static final String LISTAR_CLIENTES = "SELECT * FROM usuario";
+      //private static final String LISTAR_CLIENTES = "SELECT * FROM usuario INNER JOIN endereco on usuario.id = endereco.id_endereco WHERE usuario.id = ?";
       private static final String CONSULTAR = "SELECT * FROM usuario WHERE usuario.id = ?";
       private static final String ALTERAR = "UPDATE Usuario SET nome = ? , rg = ?, cpf = ?, dtnasc = ?, tel = ?, email = ?, login = ?, senha = ?, status = ? WHERE id = ?";
       private static final String EXCLUIR = "DELETE FROM usuario WHERE id = ?";
@@ -35,28 +37,29 @@ public class UsuarioDAO {
 public void cadastraNovoUsuario(Usuario usuario) {
     Connection conexao = null;
     PreparedStatement pstmt = null;
-     try {
-    conexao = Conexao.getConexao();
-    pstmt = conexao.prepareStatement(CADASTRA_NOVO_USUARIO,PreparedStatement.RETURN_GENERATED_KEYS);
-    pstmt.setString(1, usuario.getNome());
-    pstmt.setString(2, usuario.getRg());
-    pstmt.setString(3, usuario.getCpf());
-    pstmt.setString(4, usuario.getDtnasc());
-    pstmt.setString(5, usuario.getTelefone());
-    pstmt.setString(6, usuario.getEmail());
-    pstmt.setString(7, usuario.getLogin());
-    pstmt.setString(8, usuario.getSenha());
-    pstmt.setString(9, usuario.getPerfil().toString());
-    pstmt.setBoolean(10, usuario.isStatus());
-    pstmt.execute();
     
-    /* ENDEREÇO *****TESTE***** */
-    ResultSet rsId =  pstmt.getGeneratedKeys();
-        int id = 0;
-            if(rsId.next()) {
-                id = rsId.getInt("id"); //recupera o id do usuario (PK)
-            }
-            
+    try {
+        conexao = Conexao.getConexao();
+        pstmt = conexao.prepareStatement(CADASTRA_NOVO_USUARIO,PreparedStatement.RETURN_GENERATED_KEYS);
+        pstmt.setString(1, usuario.getNome());
+        pstmt.setString(2, usuario.getRg());
+        pstmt.setString(3, usuario.getCpf());
+        pstmt.setString(4, usuario.getDtnasc());
+        pstmt.setString(5, usuario.getTelefone());
+        pstmt.setString(6, usuario.getEmail());
+        pstmt.setString(7, usuario.getLogin());
+        pstmt.setString(8, usuario.getSenha());
+        pstmt.setString(9, usuario.getPerfil().toString());
+        pstmt.setBoolean(10, usuario.isStatus());
+        pstmt.execute();
+    
+     
+        ResultSet rsId =  pstmt.getGeneratedKeys();
+            int id = 0;
+                if(rsId.next()) {
+                    id = rsId.getInt("id"); //recupera o id do usuario (PK)
+                }
+            /*
            String sqlEndereco = "INSERT INTO endereco(logradouro, numero, bairro, cidade, estado, id_usuario) VALUES(?,?,?,?,?,?)";
              
              PreparedStatement pstmtEndereco = conexao.prepareStatement(sqlEndereco);
@@ -66,9 +69,9 @@ public void cadastraNovoUsuario(Usuario usuario) {
              pstmtEndereco.setString(4,usuario.getEndereco().getCidade());
              pstmtEndereco.setString(5, usuario.getEndereco().getEstado());
              pstmtEndereco.setInt(6, id); //FK DA TABELA 
-             pstmtEndereco.execute(); 
+             pstmtEndereco.execute(); */
              
-             conexao.commit();
+             //conexao.commit();
     
     } catch (SQLException sqlErro) {
     throw new RuntimeException(sqlErro);
@@ -127,7 +130,7 @@ public void cadastraNovoUsuario(Usuario usuario) {
             listaUsuario = new ArrayList();
             while (rs.next()) {
                 Usuario usuario = new Usuario();
-                usuario.setId(rs.getInt("id"));
+                //usuario.setId(rs.getInt("id"));
                 usuario.setNome(rs.getString("nome"));
                 usuario.setRg(rs.getString("rg"));
                 usuario.setCpf(rs.getString("cpf"));
@@ -137,8 +140,18 @@ public void cadastraNovoUsuario(Usuario usuario) {
                 usuario.setLogin(rs.getString("Login"));
                 usuario.setSenha(rs.getString("senha"));
                 //usuario.setPerfil(rs.getString("perfil"));
-                usuario.setStatus(true);
-                //usuario.setEndereco(endereco);
+                usuario.setStatus(true);                
+                /*usuario.setEndereco(endereco);
+                Endereco endereco = new Endereco();
+                endereco.setId_endereco(rs.getInt("id_endereco"));
+                endereco.setLogradouro(rs.getString("logradouro"));
+                endereco.setCep(rs.getString("cep"));
+                endereco.setNumero(rs.getInt("numero"));
+                endereco.setBairro(rs.getString("bairro"));
+                endereco.setCidade(rs.getString("cidade"));
+                endereco.setEstado(rs.getString("estado"));
+                
+                usuario.setEndereco(endereco);*/
          
                 listaUsuario.add(usuario);   
             }

@@ -4,6 +4,7 @@
     Author     : beatr
 --%>
 
+<%@page import="modelo.Usuario"%>
 <%@page import="modelo.CarrinhoDeCompra"%>
 <%@page import="modelo.Produto"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -17,12 +18,15 @@
     </head>
     <body>
         <% 
-            Produto produto = new Produto();
+            Usuario usuario = (Usuario) request.getAttribute("usuario");
+            //Produto produto = new Produto();
             //recupera os produtos do carrinho da sessao
-            CarrinhoDeCompra carrinho = (CarrinhoDeCompra) session.getAttribute("carrinho");
+            //CarrinhoDeCompra carrinho = (CarrinhoDeCompra) session.getAttribute("carrinho");
         %>
         <h1 style="font-family: cursive, Comic Sans"><font color="black">Cadastro de Endereço</h1>
         <form action="ControleUsuario" method="POST">
+            
+            <input type="hidden" value="<%=usuario.getId()%>" name="id" ></input>
             
             Logradouro:<br><input type="text" name="txtLogradouro"><br>
             CEP:<br> <input name="txtCep" type="text"><br/>

@@ -19,7 +19,7 @@ public class Endereco {
     private String bairro;
     private String cidade;
     private String estado;
-    //private Usuario usuario;
+    private Usuario usuario;
 
     public Endereco() {
     }
@@ -32,7 +32,7 @@ public class Endereco {
         this.bairro = bairro;
         this.cidade = cidade;
         this.estado = estado;
-       // this.usuario = usuario;
+        this.usuario = usuario;
     }
 
     public int getId_endereco() {
@@ -91,13 +91,11 @@ public class Endereco {
         this.estado = estado;
     }
 
-  /*  public Usuario getUsuario() {
+   public Usuario getUsuario() {
         return usuario;
     }
 
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
-    }*/
-
-    
+    }  
 }

@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import modelo.Endereco;
+import modelo.Usuario;
 
 /**
  *
@@ -29,6 +30,8 @@ public class ControleEndereco extends HttpServlet {
             Endereco endereco = new Endereco();
             if(acao.equals("Cadastrar")){
                 //recupera os parâmetros
+                Usuario usuario= new Usuario();
+                usuario.setId(Integer.parseInt(request.getParameter("id")));
                 
                 String logradouro = request.getParameter("txtLogradouro");
                 String cep = request.getParameter("txtCep");
@@ -43,6 +46,8 @@ public class ControleEndereco extends HttpServlet {
                 endereco.setBairro(bairro);
                 endereco.setCidade(cidade);
                 endereco.setEstado(estado);
+                
+                endereco.setUsuario(usuario);
                 
                 EnderecoDAO dao = new EnderecoDAO();
                 dao.cadastrarEndereco(endereco);
