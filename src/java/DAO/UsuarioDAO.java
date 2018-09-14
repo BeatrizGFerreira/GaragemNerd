@@ -59,17 +59,7 @@ public void cadastraNovoUsuario(Usuario usuario) {
                 if(rsId.next()) {
                     id = rsId.getInt("id"); //recupera o id do usuario (PK)
                 }
-            /*
-           String sqlEndereco = "INSERT INTO endereco(logradouro, numero, bairro, cidade, estado, id_usuario) VALUES(?,?,?,?,?,?)";
-             
-             PreparedStatement pstmtEndereco = conexao.prepareStatement(sqlEndereco);
-             pstmtEndereco.setString(1, usuario.getEndereco().getLogradouro());
-             pstmtEndereco.setInt(2, usuario.getEndereco().getNumero());
-             pstmtEndereco.setString(3, usuario.getEndereco().getBairro());
-             pstmtEndereco.setString(4,usuario.getEndereco().getCidade());
-             pstmtEndereco.setString(5, usuario.getEndereco().getEstado());
-             pstmtEndereco.setInt(6, id); //FK DA TABELA 
-             pstmtEndereco.execute(); */
+
              
              //conexao.commit();
     

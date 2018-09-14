@@ -43,14 +43,7 @@ public class ControleUsuario extends HttpServlet {
                 /*usuario.setLogin(request.getParameter("txtLogin"));
                 usuario.setSenha(request.getParameter("txtSenha"));*/
                 String perfil = request.getParameter("optPerfil");
-                
-                /*ENDERECO ****TESTE*****
-                String logradouro = request.getParameter("txtLogradouro");
-                String cep = request.getParameter("txtCep");
-                int numero = Integer.parseInt(request.getParameter("txtNumero"));
-                String bairro = request.getParameter("txtBairro");
-                String cidade = request.getParameter("txtCidade");
-                String estado = request.getParameter("txtEstado");*/
+
             
                 usuario.setNome(nome);
                 usuario.setRg(rg);
@@ -62,16 +55,7 @@ public class ControleUsuario extends HttpServlet {
                 usuario.setSenha(senha);
                 usuario.setPerfil(PerfilDeAcesso.COMUM);
                 usuario.setStatus(true);
-                
-                /*ENDERECO ****TESTE****
-                Endereco endereco = new Endereco();
-                endereco.setLogradouro(logradouro);
-                endereco.setCep(cep);
-                endereco.setNumero(numero);
-                endereco.setBairro(bairro);
-                endereco.setCidade(cidade);
-                endereco.setEstado(estado); */               
-                
+      
                 UsuarioDAO dao = new UsuarioDAO();
                 dao.cadastraNovoUsuario(usuario);
                 
@@ -80,7 +64,7 @@ public class ControleUsuario extends HttpServlet {
                 
                // RequestDispatcher rd = request.getRequestDispatcher("/admin/Lista.jsp");
                // ERROR *********************
-                RequestDispatcher rd = request.getRequestDispatcher("../CadEnd.jsp");
+                RequestDispatcher rd = request.getRequestDispatcher("./CadEnd.jsp");
                 //quem vai acionar toda essa ação é o forward
                 rd.forward(request, response);
                 
