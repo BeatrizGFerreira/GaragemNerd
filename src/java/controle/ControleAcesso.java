@@ -33,6 +33,7 @@ public class ControleAcesso extends HttpServlet {
                 Usuario usuario = new Usuario();
                 usuario.setLogin(request.getParameter("txtLogin"));
                 usuario.setSenha(request.getParameter("txtSenha"));
+                usuario.setEmail(request.getParameter("txtEmail"));
                 usuario.setNome(request.getParameter("txtNome"));
                 
                 
@@ -43,7 +44,7 @@ public class ControleAcesso extends HttpServlet {
                     //cria uma sessao para o usuario
                     HttpSession sessaoUsuario = request.getSession();
                     sessaoUsuario.setAttribute("usuarioAutenticado", usuarioAutenticado);
-                    //QUANDO ENTRAR, ELE DEVE VERIFICAR SE EXISTE UM CARINHO NA SESSÃO E RECUPERÁ-LO
+                    //QUANDO ENTRAR, ELE DEVE VERIFICAR SE EXISTE UM CARRINHO NA SESSÃO E RECUPERÁ-LO
                     if(usuarioAutenticado.getPerfil().equals(ADMINISTRADOR)){
                     //redireciona para a página principal
                     response.sendRedirect("admin/main.jsp");

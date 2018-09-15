@@ -23,7 +23,7 @@
         <%}%>
         
         <form action="ControleAcesso" method="POST">
-             Login: <input type="text" name="txtLogin"></br></font><br>
+             Login ou e-mail: <input type="text" name="txtLogin"></br></font><br>
              Senha: <input type="password" name="txtSenha"></br></font>
             </br>
             <input type="submit" value="Entrar" name="acao"></br></br></br>

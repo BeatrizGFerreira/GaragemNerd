@@ -55,16 +55,20 @@ public class ControleUsuario extends HttpServlet {
                 usuario.setSenha(senha);
                 usuario.setPerfil(PerfilDeAcesso.COMUM);
                 usuario.setStatus(true);
+                
       
                 UsuarioDAO dao = new UsuarioDAO();
                 dao.cadastraNovoUsuario(usuario);
                 
-                request.setAttribute("lista", dao.listar());
-                //request.setAttribute("usuario", dao.listar());
+                
+                
+                
+                request.setAttribute("usuario", usuario);
+                request.setAttribute("msg", "cadastrado com sucesso");
                 
                // RequestDispatcher rd = request.getRequestDispatcher("/admin/Lista.jsp");
                // ERROR *********************
-                RequestDispatcher rd = request.getRequestDispatcher("./CadEnd.jsp");
+                RequestDispatcher rd = request.getRequestDispatcher("/CadEnd.jsp");
                 //quem vai acionar toda essa ação é o forward
                 rd.forward(request, response);
                 

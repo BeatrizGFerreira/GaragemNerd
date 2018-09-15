@@ -33,7 +33,7 @@
             Número:<br><input name="txtCPF" type="text"><br>
             Bairro:<br> <input name="txtBairro" type="text"><br/>
             Cidade:<br> <input name="txtBairro" type="text"><br/>
-            Estado: <br><input type="email" name="txtEstado"><br/><br/><br/>            
+            Estado: <br><input type="text" name="txtEstado"><br/><br/><br/>            
             
             <input type="submit" value="Cadastrar" name="acao"><br/><br/>
  
