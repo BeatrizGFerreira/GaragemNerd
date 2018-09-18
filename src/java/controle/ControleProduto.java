@@ -143,12 +143,7 @@ public class ControleProduto extends HttpServlet {
                     //monta uma lista para exibição na pagina principal
                     //ArrayList<Produto> busca = new ProdutoDAO().listar();
                 }else if (acao.equals("finalizarCompra")){                    
-                    //recupera a sessão pertecente ao request
-                    HttpSession sessao = request.getSession();
-                    //recupera o carrinho de compras da sessão
-                    CarrinhoDeCompra carrinho = (CarrinhoDeCompra)sessao.getAttribute("carrinho");
-                    //recupera o id do produto
-                    int idProduto = Integer.parseInt(request.getParameter("idProduto"));
+                    
                 }
                 
             //fim da parte nova         

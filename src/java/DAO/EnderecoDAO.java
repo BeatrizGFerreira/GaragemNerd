@@ -34,7 +34,7 @@ public void cadastrarEndereco(Endereco endereco) {
     PreparedStatement pstmt = null;
      try {
     conexao = Conexao.getConexao();
-    pstmt = conexao.prepareStatement(CADASTRA_ENDERECO);
+    pstmt = conexao.prepareStatement(CADASTRA_ENDERECO,PreparedStatement.RETURN_GENERATED_KEYS);
     pstmt.setString(1, endereco.getLogradouro());
     pstmt.setString(2, endereco.getCep());
     pstmt.setInt(3, endereco.getNumero());

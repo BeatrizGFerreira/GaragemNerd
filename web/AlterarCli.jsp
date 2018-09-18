@@ -12,7 +12,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Alterar Cliente</title>
+        <title>Garagem NERD</title>
     </head>
     <body>
         <% 
@@ -27,7 +27,7 @@
         %>
   
         <div>
-            <h1 style="text-align: center;">ATUALIZAR CADASTRO DE CLIENTES</h1>
+            <h1 style="text-align: center;">ATUALIZAR MEUS DADOS</h1>
         <form action="ControleUsuario?id=<%= usuario.getId()%>" method="POST">
             ID: <input type="text" name="txtId" value="<%= usuario.getId()%>"><br/><br/>
             Nome: <input type="text" name="txtNome" value="<%= usuario.getNome() %>"><br/>
@@ -42,7 +42,7 @@
             
             
             <input a href="ControleUsuario?id=<%= usuario.getId()%>" class="ui-btn ui-btn-b" type="submit" name="acao" value="Alterar">
-            <input class="ui-btn ui-btn-b" type="submit" name="acao" value="Excluir"><br/><br/>
+            
             
             
         </form>

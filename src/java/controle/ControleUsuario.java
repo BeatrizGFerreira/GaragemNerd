@@ -136,8 +136,9 @@ public class ControleUsuario extends HttpServlet {
                     
                     
                     
-                    request.setAttribute("lista", dao.listar());
-                    RequestDispatcher rd = request.getRequestDispatcher("/admin/Lista.jsp");
+                    request.setAttribute("usuario", alterarUsuario);
+                    request.setAttribute("msg", "cadastrado com sucesso");
+                    RequestDispatcher rd = request.getRequestDispatcher("/principal.jsp");
                     //quem vai acionar toda essa ação é o forward
                     rd.forward(request, response);
                 }else if(acao.equals("Excluir")){

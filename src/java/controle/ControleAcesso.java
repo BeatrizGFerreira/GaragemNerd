@@ -33,8 +33,8 @@ public class ControleAcesso extends HttpServlet {
                 Usuario usuario = new Usuario();
                 usuario.setLogin(request.getParameter("txtLogin"));
                 usuario.setSenha(request.getParameter("txtSenha"));
-                usuario.setEmail(request.getParameter("txtEmail"));
-                usuario.setNome(request.getParameter("txtNome"));
+                //usuario.setEmail(request.getParameter("txtEmail"));
+                usuario.setNome(request.getParameter("txtNome"));                
                 
                 
                 UsuarioDAO usuarioDAO = new UsuarioDAO();
@@ -49,11 +49,12 @@ public class ControleAcesso extends HttpServlet {
                     //redireciona para a página principal
                     response.sendRedirect("admin/main.jsp");
                     }else{
-                        HttpSession sessao = request.getSession();
+                        response.sendRedirect("principal.jsp");
+                       /* HttpSession sessao = request.getSession();
                         CarrinhoDeCompra carrinho = (CarrinhoDeCompra)sessao.getAttribute("carrinho");
                         //VERIFICAR SE Q PESSOA TEM UM CARRINHO NA SESSÃO QUANDO LOGAR
-                        request.getRequestDispatcher("/finalizar.jsp").forward(request, response);
-                        //response.sendRedirect("finalizar.jsp");
+                        //request.getRequestDispatcher("/finalizar.jsp").forward(request, response);
+                        response.sendRedirect("finalizar.jsp");*/
                     }
                 }else{
                     RequestDispatcher rd = request.getRequestDispatcher("/Login.jsp");

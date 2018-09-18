@@ -6,6 +6,7 @@
 package controle;
 
 import DAO.ProdutoDAO;
+import DAO.UsuarioDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -16,6 +17,7 @@ import javax.servlet.http.HttpSession;
 import modelo.CarrinhoDeCompra;
 import modelo.ItemDeCompra;
 import modelo.Produto;
+import modelo.Usuario;
 import modelo.Vendas;
 
 /**
@@ -111,12 +113,26 @@ public class ControleCarrinho extends HttpServlet {
             } else if(acao.equals("finalizarcompra")){
                 HttpSession sessao = request.getSession();
                 Vendas venda = new Vendas();
+                Usuario usuario = new Usuario();
+                UsuarioDAO usuarioDAO = new UsuarioDAO();
+                Usuario usuarioAutenticado = usuarioDAO.autenticaUsuario(usuario);
+                if(usuarioAutenticado != null){
                 /*eu tenho q verificar se a pessoa já está logada no perfil dela, se não 
                 estiver eu tenho q direcionar para página de cadastro de cliente e iniciar 
                 a sessão e linkar com os dados do carrinho para enfim finalizar a compra*/
+                //recupera a sessão pertecente ao request                    
+                    //recupera o carrinho de compras da sessão
+                    CarrinhoDeCompra carrinho = (CarrinhoDeCompra)sessao.getAttribute("carrinho");
+                    //recupera o id do produto
+                    int idProduto = Integer.parseInt(request.getParameter("idProduto"));
+                    request.getRequestDispatcher("/principal.jsp").forward(request, response);
+                }else{
+                    request.getRequestDispatcher("/Login.jsp").forward(request, response);
+                }
                 if (venda != null){
                     venda.setId_usuario(0);
                 }
+                
             }
         }catch(Exception erro){
             request.setAttribute("erro", erro);

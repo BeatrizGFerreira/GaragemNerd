@@ -26,7 +26,7 @@ public class UsuarioDAO {
       
       
       private static final String CADASTRA_NOVO_USUARIO = "INSERT INTO usuario (nome, rg, cpf, dtnasc, tel, email, login, senha,perfil, status) VALUES (?,?,?,?,?,?,?,?,?,?)";
-      private static final String AUTENTICA_USUARIO = "SELECT * FROM usuario WHERE login=? AND senha=? OR email=?";
+      private static final String AUTENTICA_USUARIO = "SELECT * FROM usuario WHERE login=? AND senha=?";
       private static final String LISTAR_CLIENTES = "SELECT * FROM usuario";
       //private static final String LISTAR_CLIENTES = "SELECT * FROM usuario INNER JOIN endereco on usuario.id = endereco.id_endereco WHERE usuario.id = ?";
       private static final String CONSULTAR = "SELECT * FROM usuario WHERE usuario.id = ?";
@@ -87,7 +87,7 @@ public void cadastraNovoUsuario(Usuario usuario) {
         pstmt = conexao.prepareStatement(AUTENTICA_USUARIO);
         pstmt.setString(1, usuario.getLogin());
         pstmt.setString(2, usuario.getSenha());
-        pstmt.setString(3, usuario.getEmail());
+        //pstmt.setString(3, usuario.getEmail());        
         
         
         //pstmt.setString(4, usuario.getSenha());
@@ -96,8 +96,9 @@ public void cadastraNovoUsuario(Usuario usuario) {
         usuarioAutenticado = new Usuario();
         usuarioAutenticado.setLogin(rsUsuario.getString("login"));        
         usuarioAutenticado.setSenha(rsUsuario.getString("senha"));
-        usuarioAutenticado.setEmail(rsUsuario.getString("email"));
+        //usuarioAutenticado.setEmail(rsUsuario.getString("email"));
         usuarioAutenticado.setNome(rsUsuario.getString("nome"));
+        usuarioAutenticado.setId(Integer.parseInt(rsUsuario.getString("id")));
         usuarioAutenticado.setPerfil(PerfilDeAcesso.valueOf(rsUsuario.getString("perfil")));
          }
         } catch (SQLException sqlErro) {

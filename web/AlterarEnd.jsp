@@ -25,7 +25,7 @@
         %>
   
         <div>
-            <h1 style="text-align: center;">ATUALIZAR CADASTRO DE CLIENTES</h1>
+            <h1 style="text-align: center;">ATUALIZAR MEUS DADOS</h1>
         <form action="ControleEndereco?id=<%= endereco.getId_endereco()%>" method="POST">
             ID: <input type="text" name="txtId" value="<%= endereco.getId_endereco()%>"><br/><br/>
             Logradouro: <input type="text" name="txtLogradouro" value="<%= endereco.getLogradouro() %>"><br/>

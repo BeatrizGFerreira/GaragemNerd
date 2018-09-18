@@ -26,7 +26,7 @@
         <h1 style="font-family: cursive, Comic Sans"><font color="black">Cadastro de Endereço</h1>
         <form action="ControleUsuario" method="POST">
             
-            <input type="hidden" value="<%=usuario.getId()%>" name="id" ></input>
+            <input type="" value="<%=usuario.getId()%>" name="id" ></input>
             
             Logradouro:<br><input type="text" name="txtLogradouro"><br>
             CEP:<br> <input name="txtCep" type="text"><br/>

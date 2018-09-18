@@ -53,8 +53,10 @@ public class ControleEndereco extends HttpServlet {
                 dao.cadastrarEndereco(endereco);
                 
                 request.setAttribute("listaEnd", dao.listar());
+                request.setAttribute("msg", "cadastrado com sucesso!");
                 
-                RequestDispatcher rd = request.getRequestDispatcher("admin/ListaEnd.jsp");
+                RequestDispatcher rd = request.getRequestDispatcher("finalizar.jsp");
+                //RequestDispatcher rd = request.getRequestDispatcher("admin/ListaEnd.jsp");
                 //forward aciona a ação
                 rd.forward(request, response);
                 

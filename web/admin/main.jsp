@@ -24,11 +24,12 @@
         %>
         <div>
             <h1 style="font-family: cursive, Comic Sans"><font color="black">Bem vindo, <%=usuario.getNome()%>!</h1>
-            <%}%>
+            <%}%>                        
             <ul>
                 <font color ="black" style="font-family: cursive, Comic Sans">
                     <!--<li><a href="admin/cad_user.jsp">Cadastro usuário</a></li></br>-->
                     <!--<li><a href="cadCli.html">Cadastro de clientes</a></li></br>-->
+                    <li><a href="../ControleUsuario?id=<%=usuario.getId()%>&acao=Consultar">Meus Dados</a></li></br>
                     <li><a href="../ControleUsuario?acao=Listar">Lista De Clientes</a></li><br>                    
                     <li><a href="../ControleEndereco?acao=Listar">Lista De Endereços</a></li><br>
                     <li><a href="cadProduto.html">Cadastro de produtos</a></li></br>
