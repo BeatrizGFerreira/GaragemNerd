@@ -32,6 +32,7 @@
             %>
             <ul>
                 <li><a href="ControleUsuario?id=<%=usuario.getId()%>&acao=Consultar">Meus Dados</a></li></br>
+                <li><a href="prateleira.jsp">Prateleira</a></li></br>
                 <li><a href="carrinho.jsp">Meu carrinho</a></li></br>
                 <li><a href="ControleAcesso?acao=Sair">Logout</a></li>
             </ul>

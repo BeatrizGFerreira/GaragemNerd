@@ -55,7 +55,7 @@
                 <td> <%= usuario.getSenha()%>  </td>
                 
                 <td><a href="ControleUsuario?id=<%=usuario.getId()%>&acao=Consultar"> Editar</a></td>
-                <td><a href="ControlePessoa?id=<%=usuario.getId() %>&acao=Excluir"> Excluir</a></td>                
+                <td><a href="ControleUsuario?id=<%=usuario.getId() %>&acao=Excluir"> Excluir</a></td>                
                 <!--<input class="ui-btn ui-btn-b" type="submit" name="acao" value="Excluir"><br/><br/>-->
                 <td></td>
                 

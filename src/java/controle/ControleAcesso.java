@@ -16,6 +16,7 @@ import javax.servlet.http.HttpSession;
 import modelo.Usuario;
 import DAO.UsuarioDAO;
 import modelo.CarrinhoDeCompra;
+import modelo.PerfilDeAcesso;
 import static modelo.PerfilDeAcesso.ADMINISTRADOR;
 
 /**
@@ -34,7 +35,8 @@ public class ControleAcesso extends HttpServlet {
                 usuario.setLogin(request.getParameter("txtLogin"));
                 usuario.setSenha(request.getParameter("txtSenha"));
                 //usuario.setEmail(request.getParameter("txtEmail"));
-                usuario.setNome(request.getParameter("txtNome"));                
+                usuario.setNome(request.getParameter("txtNome"));
+                usuario.setPerfil(PerfilDeAcesso.ADMINISTRADOR);
                 
                 
                 UsuarioDAO usuarioDAO = new UsuarioDAO();

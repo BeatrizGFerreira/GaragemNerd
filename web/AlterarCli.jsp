@@ -38,6 +38,7 @@
             Email: <input type="email" name="txtEmail" value="<%= usuario.getEmail() %>"><br/><br/> 
             Login: <input type="text" name="txtLogin" value="<%= usuario.getLogin() %>"<br/><br/>
             Senha: <input type="text" name="txtSenha" value="<%= usuario.getSenha() %>"><br/><br/>
+            <!--Endereco: <input type="text" name="txtendereco" value="< usuario.getEndereco()>"><br/><br/>-->
             
             
             
@@ -47,6 +48,8 @@
             
         </form>
     </div>
+        <br/><br/>
+        <a href="ControleEndereco?id=<%= usuario.getEndereco()%>acao=Consultar">Endereço</a><br>
         <a href="principal.jsp">Página Principal</a>
     </body>
 </html>

@@ -118,6 +118,7 @@ public class ControleUsuario extends HttpServlet {
                     String login = request.getParameter("txtLogin");
                     String senha = request.getParameter("txtSenha");
                     String id = request.getParameter("txtId");
+                    String endereco = request.getParameter("txtEndereco");
                     
                     usuario.setNome(nome);
                     usuario.setRg(rg);
@@ -128,6 +129,7 @@ public class ControleUsuario extends HttpServlet {
                     usuario.setLogin(login);
                     usuario.setSenha(senha);
                     usuario.setId(Integer.parseInt(id));
+                    //usuario.setEndereco((endereco.));
                     
                     UsuarioDAO dao = new UsuarioDAO();
                     Usuario alterarUsuario = dao.Alterar(usuario);

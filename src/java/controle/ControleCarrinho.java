@@ -9,6 +9,8 @@ import DAO.ProdutoDAO;
 import DAO.UsuarioDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.time.Instant;
+import java.util.Date;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -111,10 +113,21 @@ public class ControleCarrinho extends HttpServlet {
                 //redireciona para página principal *****mudar aqui o caminho***
                 response.sendRedirect("prateleira.jsp");
             } else if(acao.equals("finalizarcompra")){
-                HttpSession sessao = request.getSession();
+                HttpSession sessao = request.getSession(); 
+                
+                //como fazer com q os dados da compra fiquem aqui
                 Vendas venda = new Vendas();
+                venda.setId(Integer.parseInt(request.getParameter("id_venda")));
+                venda.setId_usuario(Integer.parseInt(request.getParameter("id_usuario")));
+                venda.setId_quadrinho(Integer.parseInt(request.getParameter("id_quadrinho")));
+                venda.setData_venda(Date.from(Instant.MIN));
+                venda.setValor_total(Double.parseDouble(request.getParameter("valor_total")));
+                
                 Usuario usuario = new Usuario();
+                usuario.setId(Integer.parseInt(request.getParameter("id")));
+                
                 UsuarioDAO usuarioDAO = new UsuarioDAO();
+                
                 Usuario usuarioAutenticado = usuarioDAO.autenticaUsuario(usuario);
                 if(usuarioAutenticado != null){
                 /*eu tenho q verificar se a pessoa já está logada no perfil dela, se não 
