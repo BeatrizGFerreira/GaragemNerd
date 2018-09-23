@@ -10,18 +10,37 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="estilo.css"  type="text/css" media="screen"/>
+        <!--<link rel="stylesheet" href="estilo.css"  type="text/css" media="screen"/>-->
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>                      
+        <script src="js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <title>Garagem NERD</title>
     </head>
     <body>
-         <h1 style="text-align:center; font-family: cursive, Comic Sans">Lista de Usuário</h1>
+        <div class="container">
+         <h2>Lista de Usuário</h2>
         <%
             //recuperar lista do request
             List<Endereco> listaEndereco = (List<Endereco>) request.getAttribute("listaEnd");
         %>
         
-        <table data-role="table" border="1" id="table-custom-2" data-mode="columntoggle" class="ui-body-d ui-shadow table-stripe ui-responsive" data-column-btn-theme="b">
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Logradouro:</th>
+                <th>CEP:</th>
+                <th>Número:</th>
+                <th>Bairro:</th>
+                <th>Cidade:</th>
+                <th>Estado:</th>
+              </tr>
+            </thead>
+        <tbody>
+        
+        
+       <!-- <table data-role="table" border="1" id="table-custom-2" data-mode="columntoggle" class="ui-body-d ui-shadow table-stripe ui-responsive" data-column-btn-theme="b">
         <tr>
             <td>Logradouro:</td>
                 <td>CEP:</td>
@@ -31,14 +50,14 @@
                 <td>Estado:</td>
                 
                 <td>    </td>
-            </tr>
+            </tr>-->
             
             <% 
                 for(Endereco endereco: listaEndereco ){
                        
             %>
             
-            <tr class="ui-bar-d">
+            <tr>
                 
                 <td> <%= endereco.getLogradouro()%>  </td>
                 <td> <%= endereco.getCep()%>  </td>

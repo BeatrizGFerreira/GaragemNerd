@@ -13,7 +13,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 import modelo.Produto;
 import modelo.Usuario;
 import modelo.Vendas;
@@ -231,6 +230,5 @@ public class ProdutoDAO {
           }
        }
         return produto;
-    }
-    
+    }    
  }

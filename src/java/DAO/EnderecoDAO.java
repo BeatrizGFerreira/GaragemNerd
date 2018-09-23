@@ -23,7 +23,7 @@ import util.Conexao;
  */
 public class EnderecoDAO {
     
-    private static final String CADASTRA_ENDERECO = "INSERT INTO endereco(logradouro, cep, numero, bairro, cidade, estado VALUES (?,?,?,?,?,?)";
+    private static final String CADASTRA_ENDERECO = "INSERT INTO endereco(logradouro, cep, numero, bairro, cidade, estado) VALUES (?,?,?,?,?,?)";
     private static final String LISTA_ENDERECO = "SELECT * FROM endereco";
     private static final String CONSULTAR = "SELECT * FROM endereco WHERE endereco.id_endereco = ?";
     private static final String ALTERAR = "UPDATE Endereco SET logradouro = ?,cep =?, numero = ?,bairro = ?, cidade = ?, estado = ?   where id_endereco = ?";
@@ -44,7 +44,7 @@ public void cadastrarEndereco(Endereco endereco) {
     
     pstmt.execute();
     
-    conexao.commit();
+    //conexao.commit();
     
     } catch (SQLException sqlErro) {
     throw new RuntimeException(sqlErro);

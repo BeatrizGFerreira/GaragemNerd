@@ -55,10 +55,12 @@ public void cadastraNovoUsuario(Usuario usuario) {
     
      
         ResultSet rsId =  pstmt.getGeneratedKeys();
-            int id = 0;
+        rsId .next();
+        usuario.setId(rsId.getInt("id"));
+            /*int id = 0;
                 if(rsId.next()) {
                     id = rsId.getInt("id"); //recupera o id do usuario (PK)
-                }
+                }*/
 
              
              //conexao.commit();
