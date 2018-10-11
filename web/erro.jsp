@@ -14,6 +14,6 @@
     <body>
         <h1>Erro!</h1>
         <%= ((Exception)request.getAttribute("erro")).getMessage() %><br>
-        <a href="prateleira.jsp">Voltar a Prateleira</a>
+        <a href="index.jsp">Voltar a Prateleira</a>
     </body>
 </html>

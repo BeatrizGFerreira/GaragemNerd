@@ -52,10 +52,11 @@ public class ControleEndereco extends HttpServlet {
                 EnderecoDAO dao = new EnderecoDAO();
                 dao.cadastrarEndereco(endereco);
                 
-                request.setAttribute("listaEnd", dao.listar());
+                //request.setAttribute("listaEnd", dao.listar());
+                request.setAttribute("listaEnd", endereco);
                 request.setAttribute("msg", "cadastrado com sucesso!");
                 
-                RequestDispatcher rd = request.getRequestDispatcher("finalizar.jsp");
+                RequestDispatcher rd = request.getRequestDispatcher("userLogin.jsp");
                 //RequestDispatcher rd = request.getRequestDispatcher("admin/ListaEnd.jsp");
                 //forward aciona a ação
                 rd.forward(request, response);

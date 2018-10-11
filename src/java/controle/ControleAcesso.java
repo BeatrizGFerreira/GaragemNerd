@@ -58,8 +58,9 @@ public class ControleAcesso extends HttpServlet {
                         //request.getRequestDispatcher("/finalizar.jsp").forward(request, response);
                         response.sendRedirect("finalizar.jsp");*/
                     }
+                    
                 }else{
-                    RequestDispatcher rd = request.getRequestDispatcher("/Login.jsp");
+                    RequestDispatcher rd = request.getRequestDispatcher("/userLogin.jsp");
                     request.setAttribute("msg","Login ou Senha estão incorretos");
                     rd.forward(request, response);
                 }

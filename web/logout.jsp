@@ -15,7 +15,7 @@
     <body> 
         <div>
         <h1 style="font-family: cursive, Comic Sans">Obrigado pela visita!</h1>
-        <a href="prateleira.jsp"><font style="font-family: cursive, Comic Sans">Página Principal</font></a>
+        <a href="index.jsp"><font style="font-family: cursive, Comic Sans">Página Principal</font></a>
         </div>
     </body>
 </html>

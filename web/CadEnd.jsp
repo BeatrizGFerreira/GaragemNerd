@@ -27,6 +27,7 @@
             //recupera os produtos do carrinho da sessao
             //CarrinhoDeCompra carrinho = (CarrinhoDeCompra) session.getAttribute("carrinho");
         %>
+        <div class="container">
         <h2><font color="black">Cadastro de Endereço</h2>
         <form action="ControleEndereco" method="POST">
             
@@ -73,6 +74,7 @@
           <a href="cadCli.html">Voltar</a><br/>  
           <a href="ControleProduto?id=<%=request.getParameter("IdProduto")%>&acao=finalizarCompra">Terminar</a><br/>  
           <!--<a href="principal.jsp">Página Principal</a><br/>-->
-        </form>        
+        </form>  
+        </div>
     </body>
 </html>
