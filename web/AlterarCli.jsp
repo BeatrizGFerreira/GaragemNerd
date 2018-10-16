@@ -34,13 +34,13 @@
             <h2 style="text-align: center;">ATUALIZAR MEUS DADOS</h2>
         <form action="ControleUsuario?id=<%= usuario.getId()%>" method="POST">
             
-            <div class="progress">
+            <%--<div class="progress">
                 <div class="progress-bar" style="width:50%"></div>
-            </div>
+            </div>--%>
             
             <div class="form-group">
-                <label for="text">ID:</label>
-                <input type="text" class="form-control" id="id" name="txtId" value="<%= usuario.getId()%>">
+                
+                <input type="hidden" class="form-control" id="id" name="txtId" value="<%= usuario.getId()%>">
             </div>
             
             <div class="form-group">

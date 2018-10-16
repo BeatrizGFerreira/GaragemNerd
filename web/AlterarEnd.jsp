@@ -33,8 +33,8 @@
         <form action="ControleEndereco?id=<%= endereco.getId_endereco()%>" method="POST">
             
             <div class="form-group">
-                <label for="text">ID:</label>
-                <input type="text" class="form-control" id="id" name="txtId" value="<%= endereco.getId_endereco()%>">
+               <%-- <label for="text">ID:</label>--%>
+                <input type="hidden" class="form-control" id="id" name="txtId" value="<%= endereco.getId_endereco()%>">
             </div>
             <div class="form-group">
                 <label for="text">Logradouro:</label>
@@ -77,7 +77,9 @@
             
             
         </form>
+            <br/>
+            <a href="principal.jsp">Página Principal</a>
     </div>
-        <a href="principal.jsp">Página Principal</a>
+        
     </body>
 </html>

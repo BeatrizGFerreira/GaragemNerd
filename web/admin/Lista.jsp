@@ -19,6 +19,10 @@
         <script src="js/bootstrap.min.js" type="text/javascript"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+        
     </head>
     <body>
         <div class="container">
@@ -28,7 +32,7 @@
             List<Usuario> listaUsuario = (List<Usuario>) request.getAttribute("lista");
            
         %>
-        
+        <input class="form-control" id="myInput" type="text" placeholder="Search..">
         <table class="table table-striped">
             <thead>
               <tr>
@@ -64,7 +68,8 @@
                 for(Usuario usuario: listaUsuario ){
                        
             %>
-      
+            
+            <tbody id="myTable">
             <tr>
                 <td> <%= usuario.getNome() %>   </td> 
                 <td> <%= usuario.getRg() %>  </td>
@@ -81,12 +86,23 @@
                 
                 
             </tr>
+            </tbody>       
 
             <% 
                }           
             %>
          
-        </table>        
+        </table>
+        <script>
+            $(document).ready(function(){
+            $("#myInput").on("keyup", function() {
+              var value = $(this).val().toLowerCase();
+              $("#myTable tr").filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+              });
+            });
+          });
+        </script>
             <br><br/>
             <a href="admin/main.jsp">Voltar</font></a>
         </div>

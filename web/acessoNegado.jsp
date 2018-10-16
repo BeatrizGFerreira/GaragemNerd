@@ -13,6 +13,6 @@
     </head>
     <body>
         <h1> <font color= #FF0040>Você não possui permissão de acesso!</h1> </font>
-        <a href="Login.jsp">Logar Novamente</a>
+        <a href="userLogin.jsp">Logar Novamente</a>
     </body>
 </html>

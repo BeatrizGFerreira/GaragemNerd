@@ -171,7 +171,7 @@
         <div class="w3-col m3">
           <img src="imagem/flash_1.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Flash">
         </div>
-          <a href="userLogin.jsp"><button style="margin-top:64px">ENTRE E CONHEÇA MELHOR NOSSA LOJA!!!</button></a>
+          <a href="userLogin.jsp"><button style="margin-top:64px">ENTRE E CONHEÇA</button></a>
 
 
       </div>

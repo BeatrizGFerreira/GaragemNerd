@@ -16,6 +16,11 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  
         <title>Garagem NERD</title>
     </head>
     <body>
@@ -26,7 +31,7 @@
             //recuperar lista do request
             List<Produto> listaproduto = (List<Produto>) request.getAttribute("listaprod"); //("lista"); mudar na controle se der erro
         %>
-        
+        <input class="form-control" id="myInput" type="text" placeholder="Search..">
          <table class="table table-striped">
             <thead>
               <tr>
@@ -55,6 +60,7 @@
             <%                 
                 for(Produto produto: listaproduto){                    
             %>
+            <tbody id="myTable">
             <tr>
               <td><%= produto.getId()%></td>
               <td><%= produto.getTitulo()%></td>
@@ -64,6 +70,7 @@
               <td><%= produto.isStatus()%></td>
               <td><a href="ControleProduto?id=<%=produto.getId() %>&acao=Consultar"> Editar</a></td>
             </tr>
+            </tbody>
             <!--<tr class="ui-bar-d">
                 <td>< %= produto.getId()%> </td>
                 <td>< %= produto.getTitulo() %> </td>
@@ -75,13 +82,23 @@
                 
                 <!--<td><a href="ControleProduto?id=< %=produto.getId() %>&acao=Consultar"> Editar</a></td>-->
                <%-- <td><a href="ControleProduto?id=<%=produto.getId() %>&acao=Consultar"> Atualizar</a></td> --%>
-            </tr>
+            
             
             <% 
                 }
             %>
             
         </table>
+         <script>
+          $(document).ready(function(){
+          $("#myInput").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function() {
+              $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+          });
+        });
+        </script>   
             <br><br/>
             <a href="admin/cadProduto.html">Continuar Cadastrando</font></a><br/><br/>
             <a href="admin/main.jsp">Página principal</font></a>

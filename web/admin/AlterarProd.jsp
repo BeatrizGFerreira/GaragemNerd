@@ -10,20 +10,16 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <%-- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
-        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> --%>
+        <!--<link rel="stylesheet" href="../estilo.css"  type="text/css" media="screen"/>-->
+        <title>Garagem NERD</title>
+        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
         <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>                      
         <script src="js/bootstrap.min.js" type="text/javascript"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        
-        
-        <title>Garagem NERD</title>
-    </head>
-    <body>
+    </head>      
+         
         <%
             //recuperar a lista do request
             Produto produto = (Produto)request.getAttribute("consulta");
@@ -35,6 +31,7 @@
         
         
         <div class="container">
+            
         <h2>ATUALIZAR CADASTRO DE PRODUTOS</h2>
         <form action="ControleProduto?id=<%= produto.getId()%>" method="POST">
         
@@ -71,7 +68,8 @@
             <input a href="ControleProduto?id=<%= produto.getId()%>" class="btn btn-success" type="submit" name="acao" value="Alterar">
             <input type="submit" name="acao" class="btn btn-danger" value="Excluir"><br/><br/>
             <a href="admin/main.jsp">Página Principal</a>
-        </form>        
+        </form>  
+        </div>    
         </div>                        
     </body>
 </html>

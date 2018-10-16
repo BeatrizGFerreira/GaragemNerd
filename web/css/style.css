@@ -60,7 +60,7 @@ h3{
 	margin: 0 0 15px 0;
 	
 	border-bottom:1px solid #ccc;
-	background: transparent url(../images/columns_bg.png) no-repeat 100% 100%;
+	background: transparent url(../imagem/layout/columns_bg.png) no-repeat 100% 100%;
 	border-top:1px solid #ccc;
 	padding: 15px 0 10px 0;
 }
@@ -75,7 +75,7 @@ h3{
 .download , a:visited.download {
 	float:right;
 	display:block;
-	background: #000 url(../images/carousel_download_bg.gif) no-repeat 9px 0.8em;
+	background: #000 url(../imagem/layout/carousel_download_bg.gif) no-repeat 9px 0.8em;
 	padding: 10px 10px 10px 35px;
 	font-size: 1.1em;
 	color: #fff;
